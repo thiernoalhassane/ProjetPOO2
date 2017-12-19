@@ -29,12 +29,13 @@ public class panelprincipale extends javax.swing.JFrame {
         ECUE UniteEnseignement = new ECUE();
         UE ue = new UE();  // Instance de mon Jpane UE;
         Inscription inscription = new Inscription();
-        
+        Note note = new Note();
         
         pane.add(etudiant, "etudiant"); 
         pane.add(UniteEnseignement, "ue");
         pane.add(ue, "matiere"); //Jpanel.add permet d'ajouter des panels à ton Jframes
         pane.add(inscription, "inscription");
+        pane.add(note,"note");
               
         this.setContentPane(pane); // Pour afficher les differents panels 
         Toolkit tk = Toolkit.getDefaultToolkit();
@@ -69,6 +70,7 @@ public class panelprincipale extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
 
@@ -135,6 +137,16 @@ public class panelprincipale extends javax.swing.JFrame {
         entete.add(jMenu10);
 
         jMenu1.setText("Elaboration du relevé");
+
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem4.setText("Note");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem4);
+
         entete.add(jMenu1);
 
         jMenu2.setText("Relevé");
@@ -179,6 +191,10 @@ public class panelprincipale extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         principale.show(pane, "inscription");
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        principale.show(pane, "note");
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,6 +249,7 @@ public class panelprincipale extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
